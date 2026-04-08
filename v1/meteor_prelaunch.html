@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meteor — Coming Soon</title>
+
+<style>
+body {
+  margin:0;
+  font-family:Arial;
+  background:#09111f;
+  color:white;
+  text-align:center;
+}
+
+.container {
+  padding:60px 20px;
+  max-width:800px;
+  margin:auto;
+}
+
+h1 {
+  font-size:48px;
+  color:#00ff66;
+}
+
+h2 {
+  color:#aaa;
+  margin-bottom:20px;
+}
+
+.btn {
+  display:inline-block;
+  padding:15px 30px;
+  background:#00ff66;
+  color:black;
+  font-weight:bold;
+  border-radius:8px;
+  text-decoration:none;
+  margin-top:20px;
+}
+
+.btn:hover {
+  background:#00cc55;
+}
+
+.input {
+  padding:14px;
+  width:250px;
+  border-radius:6px;
+  border:none;
+  margin-top:20px;
+}
+
+.section {
+  margin-top:60px;
+}
+
+.counter {
+  font-size:32px;
+  color:#00ff66;
+  margin-top:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>METEOR</h1>
+  <h2>Where Fortunes Fall</h2>
+
+  <p>The future of crypto casino is coming.</p>
+  <p><strong>Be among the first to play.</strong></p>
+
+  <div class="counter" id="countdown">Launching Soon...</div>
+
+  <div>
+    <input class="input" placeholder="Enter your email">
+    <br>
+    <a href="#" class="btn">🚀 Join Early Access</a>
+  </div>
+
+  <div class="section">
+    <h1>🎁 Early Access Bonus</h1>
+    <p>Get exclusive rewards on launch:</p>
+    <p>💰 Up to 200% Bonus</p>
+    <p>🎰 Free Spins</p>
+    <p>🔥 VIP Access</p>
+  </div>
+
+  <div class="section">
+    <h1>🔥 Join the Community</h1>
+    <p>12,430 players already joined</p>
+    <a href="#" class="btn">Join Telegram</a>
+  </div>
+
+  <div class="section">
+    <h1>Ready for Launch?</h1>
+    <a href="#" class="btn">Get Early Access</a>
+  </div>
+
+</div>
+
+<script>
+const launchDate = new Date().getTime() + (3 * 24 * 60 * 60 * 1000);
+
+const timer = setInterval(function() {
+  const now = new Date().getTime();
+  const distance = launchDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+  document.getElementById("countdown").innerHTML =
+    days + "d " + hours + "h remaining";
+
+  if (distance < 0) {
+    clearInterval(timer);
+    document.getElementById("countdown").innerHTML = "We are LIVE 🚀";
+  }
+}, 1000);
+</script>
+
+</body>
+</html>
